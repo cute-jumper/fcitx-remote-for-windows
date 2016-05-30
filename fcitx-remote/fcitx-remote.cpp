@@ -13,45 +13,45 @@ static const HKL ENG_LAYOUT = LoadKeyboardLayout((LPCWSTR)"00000409", 2);
 
 BOOL isEngLayout()
 {
-	return GetKeyboardLayout(0) == ENG_LAYOUT;
+    return GetKeyboardLayout(0) == ENG_LAYOUT;
 }
 
 BOOL toggleInputMethod()
 {
-	INPUT ips[4];
-	memset(ips, 0, sizeof(ips));
-	for (int i = 0; i < 4; i++) {
-		ips[i].type = INPUT_KEYBOARD;
-	}
+    INPUT ips[4];
+    memset(ips, 0, sizeof(ips));
+    for (int i = 0; i < 4; i++) {
+        ips[i].type = INPUT_KEYBOARD;
+    }
     ips[0].ki.wVk = ips[2].ki.wVk = VK_LWIN;
-	ips[1].ki.wVk = ips[3].ki.wVk = VK_SPACE;
+    ips[1].ki.wVk = ips[3].ki.wVk = VK_SPACE;
     ips[2].ki.dwFlags = ips[3].ki.dwFlags = KEYEVENTF_KEYUP;
     SendInput(4, ips, sizeof(INPUT));
-	return 0;
+    return 0;
 }
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	if (argc > 1) 
-	{
-		if (!_tcscmp(argv[1], _T("-c")))
-		{
-			if (!isEngLayout())
-			{
-				toggleInputMethod();
-			}
-		}
-		else if (!_tccmp(argv[1], _T("-o")))
-		{
-			if (isEngLayout())
-			{
-				toggleInputMethod();
-			}
-		}
-	}
-	else
-	{
-		cout << (2 - isEngLayout()) << endl;
-	}
+    if (argc > 1)
+    {
+        if (!_tcscmp(argv[1], _T("-c")))
+        {
+            if (!isEngLayout())
+            {
+                toggleInputMethod();
+            }
+        }
+        else if (!_tccmp(argv[1], _T("-o")))
+        {
+            if (isEngLayout())
+            {
+                toggleInputMethod();
+            }
+        }
+    }
+    else
+    {
+        cout << (2 - isEngLayout()) << endl;
+    }
     return 0;
 }
