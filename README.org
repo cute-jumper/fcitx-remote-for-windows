@@ -1,0 +1,44 @@
+#+TITLE: fcitx-remote-for-windows
+
+This is a fake =fcitx-remote= for Windows so that it can be used by
+=fcitx.el=. Inspired by [[https://github.com/CodeFalling/fcitx-remote-for-osx/][fcitx-remote-for-osx]].
+
+* Build Instructions
+  This project is built from Visual Studio 2013. Import the project
+  into Visual Studio and get the executable file.
+
+  TODO: more detailed instructions.
+
+* Windows Setup
+  This program toggles the input method by simulating =WIN+SPACE= keys
+  (the default setting of Windows 10), which means you need to make
+  sure you can use =WIN+SPACE= to switch between English and Chinese
+  input method.
+
+* Emacs Setup
+  Add the following settings to your =init.el= so that =WIN+SPACE=
+  will not be handled by Emacs:
+
+  #+BEGIN_SRC elisp
+  (setq w32-pass-lwindow-to-system nil)
+  (setq w32-lwindow-modifier 'super)
+  #+END_SRC
+
+  Also, make sure =fcitx-remote= is in your =PATH= and =exec-path=. If
+  not, use the following code in your =init.el=:
+  
+  #+BEGIN_SRC elisp
+    (let ((fcitx-path "C:/path/to/fcitx-remote"))
+      (setenv "PATH" (concat fcitx-path ";" (getenv "PATH")))
+      (add-to-list 'exec-path fcitx-path))
+  #+END_SRC
+
+* Problems
+  TODO
+
+* TODO TODO
+  - Make the toggle key (=WIN+SPACE=) configurable.
+  - Better implementation instead of using =SendInput=.
+
+  
+
