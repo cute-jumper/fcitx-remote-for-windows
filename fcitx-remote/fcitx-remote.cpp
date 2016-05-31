@@ -23,8 +23,11 @@ BOOL toggleInputMethod()
     for (int i = 0; i < 4; i++) {
         ips[i].type = INPUT_KEYBOARD;
     }
-    ips[0].ki.wVk = ips[2].ki.wVk = VK_LWIN;
-    ips[1].ki.wVk = ips[3].ki.wVk = VK_SPACE;
+    // uncomment if use win+space
+    //ips[0].ki.wVk = ips[2].ki.wVk = VK_LWIN;
+    //ips[1].ki.wVk = ips[3].ki.wVk = VK_SPACE;
+    ips[0].ki.wVk = ips[2].ki.wVk = VK_MENU;
+    ips[1].ki.wVk = ips[3].ki.wVk = VK_SHIFT;
     ips[2].ki.dwFlags = ips[3].ki.dwFlags = KEYEVENTF_KEYUP;
     SendInput(4, ips, sizeof(INPUT));
     return 0;
