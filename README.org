@@ -4,20 +4,32 @@ This is a fake =fcitx-remote= for Windows so that it can be used by
 =fcitx.el=. Inspired by [[https://github.com/CodeFalling/fcitx-remote-for-osx/][fcitx-remote-for-osx]].
 
 * Build Instructions
-  This project is built from Visual Studio 2013. Import the project
-  into Visual Studio and build the executable file.
+** Build by Yourself
+   You can change the key combination to toggle the input method if
+   you build the program by yourself.
 
-  TODO: more detailed instructions.
+   This project is built from Visual Studio 2013. Import the project
+   into Visual Studio and build the executable file.
+
+** Use pre-built releases
+   You can download the pre-built releases in the GitHub project
+   homepage. Two versions available:
+   - Use =ALT+SHIFT= as the toggle key
+   - Use =WIn+SPACE= as the toggle key
+
+   Choose the one that fits you.
 
 * Windows Setup
-  This program toggles the input method by simulating =WIN+SPACE= keys
-  (the default key combination to toggle the input method since
-  Windows 8), which means you need to make sure you can use
-  =WIN+SPACE= to switch between English and Chinese input method.
+  This program toggles the input method by simulating =ALT+SHIFT=
+  (=WIN+SPACE=) keys (the default key combination to toggle the input
+  method since Windows 8), which means you need to make sure you can
+  use =ALT+SHIFT= (=WIN+SPACE=) to switch between English and Chinese
+  input method.
 
 * Emacs Setup
-  Add the following settings to your =init.el= so that =WIN+SPACE= can
-  be handled by the Windows instead of Emacs:
+  If you're using =WIN+SPACE= to toggle the input method, add the
+  following settings to your =init.el= so that =WIN+SPACE= can be
+  handled by the Windows instead of Emacs:
 
   #+BEGIN_SRC elisp
   (setq w32-pass-lwindow-to-system nil)
@@ -41,11 +53,11 @@ This is a fake =fcitx-remote= for Windows so that it can be used by
      sometimes if you're typing *really fast*, the input method may
      not be closed before your next input. I noticed this when I
      tested the =prefix-keys= feature of =fcitx.el=.
-  2. =WIN+SPACE= is not configurable right now.
+  2. =ALT+SHIFT= or =WIN+SPACE= is not configurable right now.
 
 * TODO TODO
   - Better implementation instead of using =SendInput=.
-  - Make the toggle key (=WIN+SPACE=) configurable.
+  - Make the toggle key (=ALT+SHIFT= or =WIN+SPACE=) configurable.
   - Support more command line options. Currently only =-c= and =-o=
     are supported. =fcitx-remote= will print the status in all the
     other cases. The current approach is already enough to make
