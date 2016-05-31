@@ -8,22 +8,24 @@ This is a fake =fcitx-remote= for Windows so that it can be used by
    You can change the key combination to toggle the input method if
    you build the program by yourself.
 
+   In current code, =ALT+SHIFT= is set as the default key combination
+   to toggle the input method.
+
    This project is built from Visual Studio 2013. Import the project
    into Visual Studio and build the executable file.
 
 ** Use pre-built releases
    You can download the pre-built releases in the GitHub project
    homepage. Two versions available:
-   - Use =ALT+SHIFT= as the toggle key
-   - Use =WIn+SPACE= as the toggle key
+   - Use =ALT+SHIFT= as the toggle key: [[https://github.com/cute-jumper/fcitx-remote-for-windows/releases/download/alt-shift/fcitx-remote.exe][download link]]
+   - Use =WIN+SPACE= as the toggle key: [[https://github.com/cute-jumper/fcitx-remote-for-windows/releases/download/win-space/fcitx-remote.exe][download link]]
 
    Choose the one that fits you.
 
 * Windows Setup
-  This program toggles the input method by simulating =ALT+SHIFT=
-  (=WIN+SPACE=) keys (the default key combination to toggle the input
-  method since Windows 8), which means you need to make sure you can
-  use =ALT+SHIFT= (=WIN+SPACE=) to switch between English and Chinese
+  This program toggles the input method by simulating =ALT+SHIFT= or
+  =WIN+SPACE= keys, which means you need to make sure you can use
+  =ALT+SHIFT= or =WIN+SPACE= to switch between English and Chinese
   input method.
 
 * Emacs Setup
@@ -62,3 +64,5 @@ This is a fake =fcitx-remote= for Windows so that it can be used by
     are supported. =fcitx-remote= will print the status in all the
     other cases. The current approach is already enough to make
     =fcitx.el= work properly.
+  - Check Vim plugin capability: help needed, since I don't use Vim
+    myself.
