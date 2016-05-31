@@ -1,7 +1,12 @@
 #+TITLE: fcitx-remote-for-windows
 
 This is a fake =fcitx-remote= for Windows so that it can be used by
-=fcitx.el=. Inspired by [[https://github.com/CodeFalling/fcitx-remote-for-osx/][fcitx-remote-for-osx]].
+[[https://github.com/cute-jumper/fcitx.el][fcitx.el]]. Inspired by [[https://github.com/CodeFalling/fcitx-remote-for-osx/][fcitx-remote-for-osx]].
+
+For Vim users: This program might also be able to be used by
+=fcitx.vim=. I haven't tested it and I probably won't since I don't
+use Vim myself. If you're interested, help me out by submitting PRs or
+reporting issues.
 
 * Build Instructions
 ** Build by Yourself
@@ -64,5 +69,5 @@ This is a fake =fcitx-remote= for Windows so that it can be used by
     are supported. =fcitx-remote= will print the status in all the
     other cases. The current approach is already enough to make
     =fcitx.el= work properly.
-  - Check Vim plugin capability: help needed, since I don't use Vim
+  - Check Vim plugin compatibility: help needed, since I don't use Vim
     myself.
