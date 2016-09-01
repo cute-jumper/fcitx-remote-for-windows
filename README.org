@@ -56,7 +56,7 @@ reporting issues.
   Currently this program works great, but still has some minor problems:
   1. =SendInput= can't guarantee the keyboard input sequence it has
      sent to be processed before it returns. In some sense, it is not
-     fully /synchronized/ (please correct me I' wrong). Therefore,
+     fully /synchronized/ (please correct me if I'm wrong). Therefore,
      sometimes if you're typing *really fast*, the input method may
      not be closed before your next input. I noticed this when I
      tested the =prefix-keys= feature of =fcitx.el=.
